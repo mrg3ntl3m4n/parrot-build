@@ -10,7 +10,7 @@
   service:
     name: rsyslog
     enabled: yes
-    state: started
+    state: restarted
   become: yes
   become_method: sudo
 
