@@ -1,4 +1,32 @@
 ---
+- name: "Hold grub-common"
+  ansible.builtin.dpkg_selections:
+    name: grub-common
+    selection: hold
+  become: true
+  become_method: sudo
+
+- name: "Hold grub-pc"
+  ansible.builtin.dpkg_selections:
+    name: grub-pc
+    selection: hold
+  become: true
+  become_method: sudo
+
+- name: "Hold grub-pc-bin"
+  ansible.builtin.dpkg_selections:
+    name: grub-pc-bin
+    selection: hold
+  become: true
+  become_method: sudo
+
+- name: "Hold grub2-common"
+  ansible.builtin.dpkg_selections:
+    name: grub2-common
+    selection: hold
+  become: true
+  become_method: sudo
+
 - name: "Updating apt repo/cache"
   apt: update_cache=yes force_apt_get=yes cache_valid_time=3600
   become: true
